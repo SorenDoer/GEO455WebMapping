@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+        <title>CSS conflicts</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playwrite+NZ+Basic+Guides&display=swap" rel="stylesheet">
+        <style>
+            h1 {font-family: "Courier", monospace; }
+            h2 {font-family: 'Tangerine', serif; 
+                font-size: 38px;}
+            i { color: green; }
+            i { color: red; }
+            b { color: #28090e; }
+            p b { color: #2727cf; }
+            y { color: yellowgreen; }
+            x { color: rgb(255, 89, 137)}
+            #intro { font-size: 100%; }
+            p {font-family: 'Raleway', sans-serif;}
+        </style>
+    </head>
+    
+    
+    <body>
+        <h2>This is a my first CSS styling document...</h2>
+        <h2>I plan to make it <x>beautiful!!</x></h2>
+        <p id="intro">This is the <i>introduction</i> <y>paragraph</y>. It has an <b>'id' attribute with the value of "intro"</b>. It is styled differently from all other <y>paragraphs</y>, using a CSS rule with an <i>ID Selector</i>.</p>
+        <p>This is the <i>second</i> <y>paragraph</y>. It <b>does not</b> have an 'id' attribute.</p>
+        <p>This is the <i>third</i> <y>paragraph</y>. It <b>also does not</b> have an 'id' attribute.</p>
+		<p> <a href='geo455_ex2.html'>Back to Main Page</a> </p>
+    </body>
+</html>
