@@ -19,7 +19,7 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    width: 950px;
+    right: 10px;
     font-size: 2em;
     font-family: "Lora", serif;
     letter-spacing: .04em;
@@ -29,6 +29,7 @@ body {
     border: 1px solid #777;
     border-radius: 6px;
     z-index: 800;
+    max-width: calc(100vw - 20px)
 }
 
 /*Style the description panel (overlay box)*/
@@ -37,7 +38,9 @@ body {
     top: 100px;
     left: 10px;
     bottom: 10px;
-    width: 250px;
+    width: 20%;                 /* relative width (20% of viewport) */
+    min-width: 200px;           /* don’t get too small */
+    max-width: 350px;           /* don’t get too wide */
     padding: 20px;
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid #777;
@@ -49,17 +52,17 @@ body {
 #footer {
     position: fixed;
     bottom: 10px;
-    left: 315px;
-    width: 645px;
-    font-size: 1em;
-    font-family: "Lora", serif;
-    letter-spacing: .04em;
-    margin: 0;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.65);
+    left: calc(10px + 37%);   /* sidebar left + relative width */
+    right: 10px;
+    height: 50px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.85);
     border: 1px solid #777;
     border-radius: 6px;
     z-index: 800;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .sidebar-img {
