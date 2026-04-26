@@ -22,35 +22,28 @@
    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
 
-   <!-- Minimap -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.3.1/dist/Control.MiniMap.min.css"> 
    <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@3.3.1/dist/Control.MiniMap.min.js"></script>    
 
-   <!-- Marker Cluster -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
-   <!-- Heat plugin -->
    <script src="js/leaflet-heat.js"></script>
 
-   <!-- DATA -->
    <script src="js/mtn_peaks.js"></script>
 
-   <!-- Leaflet heat dependency attribution (Vladimir Agafonkin) -->
    <!--
    (c) 2014, Vladimir Agafonkin
    simpleheat, a tiny JavaScript library for drawing heatmaps with Canvas
    https://github.com/mourner/simpleheat
    -->
 
-   <!-- CSS -->
    <link rel="stylesheet" href="geo455_lab7.css">
 
 </head>
 
 <body class="bg-light">
 
-<!-- Navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
   <div class="container-fluid">
     <span class="navbar-brand fw-semibold">
@@ -63,7 +56,6 @@
 <div class="container-fluid">
   <div class="row g-3 py-3">
 
-    <!-- Map -->
     <div class="col-lg-9">
       <div class="card shadow-sm">
         <div class="card-body p-0">
@@ -73,7 +65,6 @@
       </div>
     </div>
 
-    <!-- Info panel -->
     <div class="col-lg-3">
       <div class="card shadow-sm">
         <div class="card-body">
@@ -87,7 +78,6 @@
 
           <p><strong>Proportional Circles showing number of expeditions:</strong> Circle size represents the number of expeditions for each peak.</p>
 
-          <!-- injected by JS -->
           <div id="prop-circle-legend" class="mt-2"></div>
 
           <p><strong>Death Density Heat Map:</strong> Heat intensity is weighted by total number of deaths.</p>
@@ -104,7 +94,6 @@
   </div>
 </div>
 
-<!-- YOUR JS (MUST BE LAST) -->
 <script src="map_lab7.js"></script>
 
 </body>

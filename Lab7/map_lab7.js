@@ -3,7 +3,6 @@ var mymap = L.map('map', {
     zoom: 8
 });
 
-/* ---------------- BASE LAYER ---------------- */
 var streets = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {
@@ -11,19 +10,16 @@ var streets = L.tileLayer(
     }
 ).addTo(mymap);
 
-/* ---------------- SCALE BAR ---------------- */
 L.control.scale({
     position: 'bottomright',
     metric: true,
     imperial: true
 }).addTo(mymap);
 
-/* ---------------- HOME / FULL EXTENT BUTTON ---------------- */
 L.easyButton('<img src="images/globe_icon.png" style="width:12px;">', function () {
     mymap.setView([28.9724, 84.5944], 8);
 }, 'Zoom to Full Extent').addTo(mymap);
 
-/* ---------------- MINIMAP ---------------- */
 var miniBase = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 );
@@ -34,7 +30,6 @@ var miniMap = new L.Control.MiniMap(miniBase, {
     position: 'bottomleft'
 }).addTo(mymap);
 
-/* ---------------- ICON ---------------- */
 var myIcon = L.icon({
     iconUrl: 'images/peaks.png',
     iconSize: [20, 20],
@@ -42,7 +37,6 @@ var myIcon = L.icon({
     popupAnchor: [1, -24]
 });
 
-/* ---------------- PEAK MARKERS ---------------- */
 var peaks = L.geoJSON(mtn_peaks, {
 
     pointToLayer: function(feature, latlng) {
@@ -60,7 +54,6 @@ var peaks = L.geoJSON(mtn_peaks, {
 
 });
 
-/* ---------------- PROPORTIONAL CIRCLES ---------------- */
 function getRadius(val) {
     return Math.sqrt(val / Math.PI) * 2;
 }
@@ -86,7 +79,6 @@ var propcircles = L.geoJSON(mtn_peaks, {
 
 });
 
-/* ---------------- HEAT MAP ---------------- */
 var heatArray = [];
 
 mtn_peaks.features.forEach(function(feature) {
@@ -110,7 +102,6 @@ var heat = L.heatLayer(heatArray, {
     }
 });
 
-/* ---------------- CLUSTER LAYER ---------------- */
 var clusters = L.markerClusterGroup();
 
 mtn_peaks.features.forEach(function(feature) {
@@ -119,10 +110,8 @@ mtn_peaks.features.forEach(function(feature) {
     clusters.addLayer(L.marker([lat, lng]));
 });
 
-/* ---------------- ADD DEFAULT LAYER ---------------- */
 mymap.addLayer(peaks);
 
-/* ---------------- LAYER CONTROL (LEGEND + CHECKBOXES) ---------------- */
 var baseMaps = {
     "Streets": streets
 };
@@ -182,7 +171,6 @@ legendControl.onAdd = function (map) {
     </div>
     `;
 
-    // prevent map from zooming/dragging when clicking legend
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
 
@@ -234,7 +222,7 @@ var searchControl = new L.Control.Search({
     propertyName: 'TITLE',
     zoom: 12,
     collapsed: false,
-    textPlaceholder: 'Search peaks...'
+    textPlaceholder: 'search peaks...'
 });
 
 mymap.addControl(searchControl);
