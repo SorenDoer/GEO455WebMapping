@@ -1,0 +1,95 @@
+<html>
+   <head>
+      <title>Ex-7-2: CSS manipulation</title>
+
+    </head>
+      <script 
+        src="https://code.jquery.com/jquery-4.0.0.min.js" 
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+        crossorigin="anonymous">
+      </script>
+
+        
+    <style>
+           .charac {
+               float: left;
+           }
+           img {
+              width: 200px; 
+               height: 200px; 
+           }
+           .styleclass1 {
+               border: 5px solid cadetblue;
+           },
+
+        .charac {
+            float: left;
+        }
+        img {
+            width: 200px;
+             height: 200px;
+        }
+        .styleclass2 {
+            border: 10px solide cadetblue;
+        }
+      </style>
+      
+      <script>
+          $(document).ready(function() {
+              $("#button-1").click(function(){
+                  $("img").addClass("styleclass1"); //try change to toggleClass
+                            // Add removeClass()
+              });
+              $("#button-2").click(function(){
+                  $("img").toggleClass("styleclass1");
+              });
+          });
+                    $(document).ready(function() {
+              $("#button-2").click(function(){
+                  $("img").addClass("styleclass2"); //try change to toggleClass
+                            // Add removeClass()
+              });
+              $("#button-2").click(function(){
+                  $("img").toggleClass("styleclass2");
+              });
+          });
+          
+          
+          $(document).ready(function() {
+              $("#hide-btn").click(function(){
+                  $("img.normal").hide()
+                  $("img.fast").hide("fast")
+                  $("img.slow").hide("slow")
+                  $("img.very-slow").hide(2000)
+          }
+      </script>
+    
+            <script>
+            $(document).ready(function() {
+                $("#button").click(function(){
+                    $("img").animate({left: '750px'});
+                });
+            });
+            </script>
+
+
+	
+   <body>
+       <h1> Adventures of Tintin </h1>
+       <button id="button">Go</button>
+       
+       <div class= "charac"> 
+           <img src="img/tintin-milou.jpg">
+           <img src="img/captain-haddock_v2.jpg">
+           <img src="img/prof_calcu.jpg">
+           <img src="img/Thomson_&_Thompson.png">
+       </div>
+
+              <!-- add button for add class to change to styleClass --> 
+       <button id="button-1">Try addClass()</button>
+              <!-- add button for remove class -->
+       <button id="button-2">Try toggleClass()</button>
+
+       <!-- add button for toggle class -->
+   </body>
+</html>
