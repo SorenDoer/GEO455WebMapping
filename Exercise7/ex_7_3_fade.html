@@ -8,7 +8,8 @@
         integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
         crossorigin="anonymous">
       </script>
-             <style>
+
+      <style>
            .charac {
                float: left;
            }
@@ -19,23 +20,23 @@
       </style>
 
       <script>
-          /*try this below*/
-       /*$(document).ready(function() {
-              $("img").click(function(){
-                  $(this).hide();
-              });
-          }); */
-          
-          $(document).ready(function() {
-              $("#button-1").click(function(){
-                  $("#normal").fadeToggle();
-                  $("#fast").fadeToggle("fast");
-                  $("#slow").fadeToggle("slow");
-                  $("#very-slow").fadeToggle(2000);
-              });
-          });
-          
+       $(document).ready(function() {
 
+            $("#button-2").click(function(){
+                $("#normal").hide();
+                $("#fast").hide();
+                $("#slow").hide();
+                $("#very-slow").hide();
+            });
+
+            $("#button-1").click(function(){
+                $("#normal").fadeToggle();
+                $("#fast").fadeToggle("fast");
+                $("#slow").fadeToggle("slow");
+                $("#very-slow").fadeToggle(2000);
+            });
+
+       });
       </script>
 
 	
@@ -43,12 +44,14 @@
        <h1> Adventures of Tintin </h1>
        <p> Main Characters </p>
        <div class= "charac">
-           <img id="normal" src="img/tintin-milou.jpg"> <br>
-           <img id="fast" src="img/captain-haddock_v2.jpg"> <br>
-           <img id="slow" src="img/prof_calcu.jpg"> <br>
-           <img id="very-slow" src="img/Thomson_&_Thompson.png"> <br>
+           <img id="normal" src="images/tintin-milou.jpg"> <br>
+           <img id="fast" src="images/captain-haddock_v2.jpg"> <br>
+           <img id="slow" src="images/prof_calcu.jpg"> <br>
+           <img id="very-slow" src="images/Thomson_&_Thompson.png"> <br>
        </div>
        
        <button id="button-1">Fade Toggle</button>
+       <button id="button-2">Hide Toggle</button>
+
    </body>
 </html>
