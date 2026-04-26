@@ -41,14 +41,12 @@ $(document).ready(function () {
         $("img.very-slow").animate({ left: "1050px" }, 3500);
     });
 
-$("#button-1").text("Reset Race").click(function () {
-
-    $("img")
-        .stop(true)
-        .show()
-        .css("left", "0px");
-
-});
+    $("#button-1").text("Reset Race").click(function () {
+        $("img")
+            .stop(true)
+            .show()
+            .css("left", "0px");
+    });
 
     $("#button-2").click(function () {
         $("img")
