@@ -3,12 +3,13 @@
       <title>Ex-7-3: Hide/Show CSS manipulation</title>
 
     </head>
+
       <script 
-        src="https://code.jquery.com/jquery-4.0.0.min.js" 
-        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
         crossorigin="anonymous">
       </script>
-             <style>
+
+      <style>
            .charac {
                float: left;
            }
@@ -51,28 +52,27 @@
                   $("img.fast").show();               
                   $("img.slow").show("slow");
                   $("img.very-slow").show(2000);
-                  
               });
           }); 
+
         $(document).ready(function() {
 
-    let wiggleOn = false;
+            let wiggleOn = false;
 
-    $("#wiggle-btn").click(function(){
+            $("#wiggle-btn").click(function(){
 
-        if (!wiggleOn) {
-            $("img").addClass("wiggle");
-            wiggleOn = true;
-        } else {
-            $("img").removeClass("wiggle");
-            wiggleOn = false;
-        }
+                if (!wiggleOn) {
+                    $("img").addClass("wiggle");
+                    wiggleOn = true;
+                } else {
+                    $("img").removeClass("wiggle");
+                    wiggleOn = false;
+                }
 
-    });
+            });
 
-});
+        });
           
-
       </script>
 
 	
