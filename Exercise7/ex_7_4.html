@@ -10,21 +10,38 @@
       </script>
 
     <style>
-           img {
-               position: relative;
-               width: 200px; 
-               height: 200px; 
-           }
+img {
+    position: relative;
+    width: 200px; 
+    height: 200px; 
+}
+
+#prof {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
       </style>
 
       <script>
           
-            $(document).ready(function() {
-              $("#button").click(function(){
-                  $("img").animate({left: '750px'});
-            });
-          });
-            
+$(document).ready(function() {
+
+    $("#button").click(function(){
+
+        $("img:not(#prof)").each(function(index){
+
+            $(this).animate({ left: "+=750px" }, 2000)
+                   .animate({ top: "-=20px" }, 150)
+                   .animate({ top: "+=20px" }, 150)
+                   .animate({ top: "-=20px" }, 150)
+                   .animate({ top: "+=20px" }, 150);
+
+        });
+
+    });
+
+});
           
 
       </script>
@@ -35,10 +52,10 @@
        <button id="button">Go</button>
        
        <div>
-           <img src="img/tintin-milou.jpg"> <br>
-           <img src="img/captain-haddock_v2.jpg"> <br>
-           <img src="img/prof_calcu.jpg"> <br>
-           <img src="img/Thomson_&_Thompson.png"> <br>
+           <img src="images/tintin-milou.jpg"> <br>
+           <img src="images/captain-haddock_v2.jpg"> <br>
+<img id="prof" src="images/prof_calcu.jpg"> <br>
+           <img src="images/Thomson_&_Thompson.png"> <br>
        </div>
        
 
