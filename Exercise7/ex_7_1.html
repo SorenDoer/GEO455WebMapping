@@ -14,39 +14,71 @@
               background: "black",
               border: "3px solid black"
           }
-          // use the ready function to manipulate the DOM when the document is ready
-        $(document).ready(function() {
-            $("p:first").css('background-color', 'orange');
-            $("button").click(function(){
-                $("ul").css('color', 'green');
-                $("#test").css(design);
-            });
-         });
-          
-                $(document).ready(function() {
-            $("p:first").css('background-color', 'orange');
-            $("button").click(function(){
-                $("ul").css('color', 'green');
-                $("#test").css(design);
-            });
-         });
 
-         //try creating a new variable and use it in a function to change the text of the list items and call it when the button is clicked
+          var design2 = {
+              color: "blue",
+              background: "black",
+              border: "3px solid black"
+          }
+
+        $(document).ready(function() {
+
+
+
+            $("p:first").css('background-color', 'orange');
+
+            $("button:first").click(function(){
+                $("ul:first").css('color', 'green');
+                $("#test").css(design);
+
+                $("ul:first").fadeToggle(300).fadeToggle(300);
+
+                $("#resetBtn").click(function(){
+                    location.reload();
+                });
+            });
+
+
+            $("#p2").css('background-color', 'green');
+
+            $("#btn2").click(function(){
+                $("#list2").css('color', 'blue');
+                $("#list2").fadeToggle(300).fadeToggle(300);
+            });
+
+        });
+
       </script>
+
    </head>
 	
    <body>
        <h1> Webmapping </h1>
-       <p> Technologies we learned </p>
+
+       <p>Technologies we learned</p>
+
        <ul>
-           <li> HTML </li>
-           <li> CSS </li>
-           <li> JavaScript </li>
-           <li> jQuery </li>
+           <li>HTML</li>
+           <li>CSS</li>
+           <li>JavaScript</li>
+           <li>jQuery</li>
        </ul>
 
-
        <p id="test">Check console to get the text for list</p> 
+
        <button>Change list text color</button>
-    </body>
+       <button id="resetBtn">Reset Page</button>
+
+       <p id="p2">Technologies we learned</p>
+
+       <ul id="list2">
+           <li>HTML</li>
+           <li>CSS</li>
+           <li>JavaScript</li>
+           <li>jQuery</li>
+       </ul>
+
+       <button id="btn2">Change text to blue</button>
+
+   </body>
 </html>
