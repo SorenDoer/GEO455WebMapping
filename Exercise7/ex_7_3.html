@@ -16,15 +16,27 @@
               width: 200px; 
                height: 200px; 
            }
+            .wiggle {
+    position: relative;
+    animation: wiggleAnim 0.4s infinite;
+}
+
+@keyframes wiggleAnim {
+    0%   { top: 0px; }
+    25%  { top: -10px; }
+    50%  { top: 0px; }
+    75%  { top: 10px; }
+    100% { top: 0px; }
+}
       </style>
 
       <script>
           
-       /*$(document).ready(function() {
+       $(document).ready(function() {
               $("img").click(function(){
                   $(this).hide();
               });
-          }); */
+          }); 
           
          $(document).ready(function() {
               $("#hide-btn").click(function(){
@@ -42,6 +54,23 @@
                   
               });
           }); 
+        $(document).ready(function() {
+
+    let wiggleOn = false;
+
+    $("#wiggle-btn").click(function(){
+
+        if (!wiggleOn) {
+            $("img").addClass("wiggle");
+            wiggleOn = true;
+        } else {
+            $("img").removeClass("wiggle");
+            wiggleOn = false;
+        }
+
+    });
+
+});
           
 
       </script>
@@ -51,13 +80,14 @@
        <h1> Adventures of Tintin </h1>
        <p> Main Characters </p>
        <div class= "charac">
-           <img class="normal" src="img/tintin-milou.jpg">
-           <img class="fast" src="img/captain-haddock_v2.jpg">
-           <img class="slow" src="img/prof_calcu.jpg">
-           <img class="very-slow" src="img/Thomson_&_Thompson.png">
+           <img class="normal" src="images/tintin-milou.jpg">
+           <img class="fast" src="images/captain-haddock_v2.jpg">
+           <img class="slow" src="images/prof_calcu.jpg">
+           <img class="very-slow" src="images/Thomson_&_Thompson.png">
        </div>
        
        <button id='hide-btn'>Hide</button>
        <button id='show-btn'>Show</button>
+       <button id="wiggle-btn">Wiggle Images</button>
    </body>
 </html>
