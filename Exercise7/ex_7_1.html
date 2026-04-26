@@ -1,14 +1,10 @@
 <html>
    <head>
       <title>Ex-7-1: DOM manipulation</title>
-      <script 
-      src="https://code.jquery.com/jquery-3.7.1.min.js" 
-      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
-      crossorigin="anonymous">
-      </script>
+
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
       <script>
-        // create a reusable design variable to change the css of the element with id test
          var design = {
               color: "Green",
               background: "black",
@@ -23,8 +19,6 @@
 
         $(document).ready(function() {
 
-
-
             $("p:first").css('background-color', 'orange');
 
             $("button:first").click(function(){
@@ -32,12 +26,11 @@
                 $("#test").css(design);
 
                 $("ul:first").fadeToggle(300).fadeToggle(300);
-
-                $("#resetBtn").click(function(){
-                    location.reload();
-                });
             });
 
+            $("#resetBtn").click(function(){
+                location.reload();
+            });
 
             $("#p2").css('background-color', 'green');
 
@@ -51,7 +44,7 @@
       </script>
 
    </head>
-	
+
    <body>
        <h1> Webmapping </h1>
 
