@@ -29,26 +29,62 @@
 
   <main>
     <section class="hero" id="about">
-      <h2>About me</h2>
-      <p>This map shows the current locations for wildfires, wind patterns, and air quality across America. You can toggle these layers on or off on three different basemaps!</p>
+      <h2>About the Map</h2>
+      <p>This map pulls live data from Esri, the WAQI, and Open-Mateo API to generate an up-to-date map of wildfires, air quality, and wind patterns across the United States of America. These layers can be viewed independently or all. There are also three basemaps to choose from: streets, satellite imagery, and terrain. Clicking on wildfire polygons displays a pop-up with the fire's name, size, location, and a link to more information. The air quality layer shows the measurements of Air Quality Index stations nationwide. And the wind layer shows the direction and speed of winds from sea to shining sea! </p>
 
-      <figure>
-        <p> Sources for Data:</p>
-        <figcaption>https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0.</figcaption>
-        <p>https://openweathermap.org/api/weathermaps</p>
-        
-        <p>https://aqicn.org/api/</p>
-      </figure>
+<figure>
+  <h3>Data & Map Sources</h3>
+
+  <ul>
+    <li>
+      <strong>Wildfires:</strong><br>
+      U.S. Interagency Fire Center (ArcGIS Online)<br>
+      <a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0/" target="_blank">
+        ArcGIS Wildfire Feature Service
+      </a>
+    </li>
+
+    <li>
+      <strong>Air Quality:</strong><br>
+      World Air Quality Index Project (WAQI)<br>
+      <a href="https://waqi.info/" target="_blank">https://waqi.info/</a>
+    </li>
+
+    <li>
+      <strong>Wind:</strong><br>
+      Open-Meteo API (wind speed and direction)<br>
+      <a href="https://open-meteo.com/" target="_blank">https://open-meteo.com/</a>
+    </li>
+
+    <li>
+      <strong>U.S. Boundary Data:</strong><br>
+      World GeoJSON (Johan Sundström)<br>
+      <a href="https://github.com/johan/world.geo.json" target="_blank">
+        GitHub Repository
+      </a>
+    </li>
+
+    <li>
+      <strong>Base Maps:</strong><br>
+      OpenStreetMap, Esri World Imagery, Mundialis Terrain<br>
+      <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> •
+      <a href="https://www.esri.com/" target="_blank">Esri</a> •
+      <a href="https://ows.mundialis.de/" target="_blank">Mundialis</a>
+    </li>
+
+    <li>
+      <strong>Libraries:</strong><br>
+      Leaflet, jQuery, Turf.js<br>
+      <a href="https://leafletjs.com/" target="_blank">Leaflet</a> •
+      <a href="https://jquery.com/" target="_blank">jQuery</a> •
+      <a href="https://turfjs.org/" target="_blank">Turf.js</a>
+    </li>
+    <p>Map created by Soren Doerfler</p>
+  </ul>
+</figure>
     </section>
 
-    <section id="books">
-      <h2>Data Sources:</h2>
-      <ul>
-        <li><a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0.">Wildfires</a></li>
-        <li><a href="https://openweathermap.org/api/weathermap">Wind</a></li>
-         <li><a href="https://aqicn.org/api/">Air Quality</a></li>
-      </ul>
-    </section>
+  
 
     <section id="contact">
       <h2>Contact</h2>
