@@ -168,7 +168,7 @@ resetControl.onAdd = function () {
 
     div.onclick = function (e) {
         e.preventDefault();
-        map.setView([42.90982588686551, -95.68879571979095], 5);
+        map.setView([40.754768479686305, -96.83556439730569], 5);
     };
 
     return div;
