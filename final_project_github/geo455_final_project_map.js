@@ -12,9 +12,12 @@ map.on("drag", function () {
 });
 
 var streets = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
-var satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{y}");
+var satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}");
 var terrain = L.tileLayer.wms("https://ows.mundialis.de/services/service?", {
-    layers: "SRTM30-Colored-Hillshade"
+    layers: "SRTM30-Colored-Hillshade",
+    format: "image/png",
+    transparent: false,
+    attribution: "Mundialis"
 });
 
 var wildfireUrl =
