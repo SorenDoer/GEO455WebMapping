@@ -12,6 +12,7 @@
     .hero { background: #4f7f5a; border-radius: 12px; padding: 16px; color: #f3f7f3; }
     .center { text-align: center; }
     img { max-width: 100%; height: auto; }
+    .section-box { margin-top: 20px; padding: 12px; background: #eef6ee; border-radius: 10px; }
   </style>
 </head>
 
@@ -32,63 +33,71 @@
       <h2>About the Map</h2>
       <p>This map pulls live data from Esri, the WAQI, and Open-Mateo API to generate an up-to-date map of wildfires, air quality, and wind patterns across the United States of America. These layers can be viewed independently or all. There are also three basemaps to choose from: streets, satellite imagery, and terrain. Clicking on wildfire polygons displays a pop-up with the fire's name, size, location, and a link to more information. The air quality layer shows the measurements of Air Quality Index stations nationwide. And the wind layer shows the direction and speed of winds from sea to shining sea!</p>
 
-      <p>The web map was built with Leaflet using base layers from OpenStreetMap and Esri. Most datasets were already compatible with web mapping so little was done to filter or sort the data.  Wildfire data was accessed directly from an ArcGIS REST API and rendered as GeoJSON, U.S. boundary data was also retrieved as GeoJSON and used to create the mask. Wind data was gathered by sampling a grid of latitude and longitude points and querying the Open-Meteo API, then the symbols were customized to an instantly readable state. The number of wind requests was limited to improve performance. All data was used in WGS84, which is the standard web mapping coordinate system and default for Leaflet. Final data delivery to the map happened using live APIs and GeoJSON services, as well as tiled map layers for air quality, allowing good visualization without downloading or storing local datasets.</p>
-
-<figure>
-  <h3>Data & Map Sources</h3>
-
-  <ul>
-    <li>
-      <strong>Wildfires:</strong><br>
-      U.S. Interagency Fire Center (ArcGIS Online)<br>
-      <a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0/" target="_blank">
-        ArcGIS Wildfire Feature Service
-      </a>
-    </li>
-
-    <li>
-      <strong>Air Quality:</strong><br>
-      World Air Quality Index Project (WAQI)<br>
-      <a href="https://waqi.info/" target="_blank">https://waqi.info/</a>
-    </li>
-
-    <li>
-      <strong>Wind:</strong><br>
-      Open-Meteo API (wind speed and direction)<br>
-      <a href="https://open-meteo.com/" target="_blank">https://open-meteo.com/</a>
-    </li>
-
-    <li>
-      <strong>U.S. Boundary Data:</strong><br>
-      World GeoJSON (Johan Sundström)<br>
-      <a href="https://github.com/johan/world.geo.json" target="_blank">
-        GitHub Repository
-      </a>
-    </li>
-
-    <li>
-      <strong>Base Maps:</strong><br>
-      OpenStreetMap, Esri World Imagery, Mundialis Terrain<br>
-      <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> •
-      <a href="https://www.esri.com/" target="_blank">Esri</a> •
-      <a href="https://ows.mundialis.de/" target="_blank">Mundialis</a>
-    </li>
-
-    <li>
-      <strong>Libraries:</strong><br>
-      Leaflet, jQuery, Turf.js<br>
-      <a href="https://leafletjs.com/" target="_blank">Leaflet</a> •
-      <a href="https://jquery.com/" target="_blank">jQuery</a> •
-      <a href="https://turfjs.org/" target="_blank">Turf.js</a>
-    </li>
-    <p>Map created by Soren Doerfler</p>
-  </ul>
-</figure>
+      <p>The web map was built with Leaflet using base layers from OpenStreetMap and Esri. Most datasets were already compatible with web mapping so little was done to filter or sort the data. Wildfire data was accessed directly from an ArcGIS REST API and rendered as GeoJSON, U.S. boundary data was also retrieved as GeoJSON and used to create the mask. Wind data was gathered by sampling a grid of latitude and longitude points and querying the Open-Meteo API, then the symbols were customized to an instantly readable state. The number of wind requests was limited to improve performance. All data was used in WGS84, which is the standard web mapping coordinate system and default for Leaflet. Final data delivery to the map happened using live APIs and GeoJSON services, as well as tiled map layers for air quality, allowing good visualization without downloading or storing local datasets.</p>
     </section>
 
-  
+    <section class="section-box">
+      <h3>Data & Map Sources</h3>
+      <ul>
+        <li>
+          <strong>Wildfires:</strong><br>
+          U.S. Interagency Fire Center (ArcGIS Online)<br>
+          <a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0/" target="_blank">
+            ArcGIS Wildfire Feature Service
+          </a>
+        </li>
 
-    <section id="contact">
+        <li>
+          <strong>Air Quality:</strong><br>
+          World Air Quality Index Project (WAQI)<br>
+          <a href="https://waqi.info/" target="_blank">https://waqi.info/</a>
+        </li>
+
+        <li>
+          <strong>Wind:</strong><br>
+          Open-Meteo API (wind speed and direction)<br>
+          <a href="https://open-meteo.com/" target="_blank">https://open-meteo.com/</a>
+        </li>
+
+        <li>
+          <strong>U.S. Boundary Data:</strong><br>
+          World GeoJSON (Johan Sundström)<br>
+          <a href="https://github.com/johan/world.geo.json" target="_blank">
+            GitHub Repository
+          </a>
+        </li>
+
+        <li>
+          <strong>Base Maps:</strong><br>
+          OpenStreetMap, Esri World Imagery, Mundialis Terrain<br>
+          <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> •
+          <a href="https://www.esri.com/" target="_blank">Esri</a> •
+          <a href="https://ows.mundialis.de/" target="_blank">Mundialis</a>
+        </li>
+
+        <li>
+          <strong>Libraries:</strong><br>
+          Leaflet, jQuery, Turf.js<br>
+          <a href="https://leafletjs.com/" target="_blank">Leaflet</a> •
+          <a href="https://jquery.com/" target="_blank">jQuery</a> •
+          <a href="https://turfjs.org/" target="_blank">Turf.js</a>
+        </li>
+      </ul>
+
+      <p>Map created by Soren Doerfler</p>
+    </section>
+
+    <section class="section-box">
+      <h3>Before Final Submission:</h3>
+      <ul>
+        <li><strong>What works well:</strong> Pop-ups and thematic layers</li>
+        <li><strong>Strengths:</strong> Clarity and visualization</li>
+        <li><strong>Limits:</strong> Restrictions on data usage, current bugs with basemaps and wind layer, pop-ups don’t link to anything yet</li>
+        <li><strong>Final improvements:</strong> Fix wind and basemaps, make pop-up links useful, and add a search bar</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section-box">
       <h2>Contact</h2>
       <p>
         <a href="mailto:deorfler0711@uwlax.edu?subject=GEO%20455%20Webmapping">Email me</a>
@@ -97,8 +106,8 @@
     </section>
   </main>
 
-<footer class="center">
-  <p><a href="geo455_final_project.html">Back to map...</a></p>
+  <footer class="center">
+    <p><a href="geo455_final_project.html">Back to map...</a></p>
   </footer>
 </body>
 </html>
